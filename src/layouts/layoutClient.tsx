@@ -1,4 +1,3 @@
-// import { NavBarCuston } from "@/components";
 import { Outlet } from "react-router-dom";
 export const LayoutClient = () => {
   return (

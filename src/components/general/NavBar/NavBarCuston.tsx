@@ -7,7 +7,7 @@ import {
   Button,
 } from "@nextui-org/react";
 
-export const NavBarCuston = () => {
+export function NavBarCuston() {
   return (
     <Navbar>
       <NavbarBrand>
@@ -44,4 +44,4 @@ export const NavBarCuston = () => {
       </NavbarContent>
     </Navbar>
   );
-};
+}
