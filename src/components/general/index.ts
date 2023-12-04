@@ -1,3 +1,3 @@
-import { NavBar } from "./NavBar/NavBar";
+import { NavBarCuston } from "./NavBar/NavBarCuston";
 
-export { NavBar };
+export { NavBarCuston };
