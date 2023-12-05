@@ -7,4 +7,10 @@ export interface IProject {
   category: string;
 }
 
-export interface ISkill {}
+export interface ISkill {
+  id: string;
+  name: string;
+  description: string;
+  tools: [string];
+  language: [string];
+}
