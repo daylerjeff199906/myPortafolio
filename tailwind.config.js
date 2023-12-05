@@ -20,7 +20,16 @@ export default {
         xl: "5rem",
       },
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        love: {
+          "100%": { transform: "scale(1.2)" },
+        },
+      },
+      animation: {
+        love: "love 0.5s linear infinite alternate-reverse",
+      },
+    },
   },
   darkMode: "class",
   plugins: [nextui()],

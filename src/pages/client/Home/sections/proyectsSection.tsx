@@ -11,8 +11,7 @@ const optionsFilters = [
 
 export const ProyectsSection = () => {
   const { updateUrl } = usePagination();
-  const { dataProjects } = UseLogicData();
-  console.log(dataProjects);
+  const { dataProjects, dataDefault } = UseLogicData();
   return (
     <>
       <div className="container py-6 max-w-7xl pb-12">
@@ -28,7 +27,9 @@ export const ProyectsSection = () => {
                     updateUrl({ name: "categories", value: item.value })
                   }
                   color="success"
-                  variant="bordered"
+                  variant={
+                    dataDefault.categories === item.value ? "solid" : "bordered"
+                  }
                 >
                   {item.name}
                 </Button>
@@ -36,7 +37,7 @@ export const ProyectsSection = () => {
             </ButtonGroup>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {dataProjects?.map((item, index) => (
             <CardProject
               key={index}
