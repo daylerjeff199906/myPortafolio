@@ -24,6 +24,7 @@ export function CardProject({ project }: { project: projectInfo }) {
         </CardHeader>
         <Image
           removeWrapper
+          isZoomed
           alt="Relaxing app background"
           className="z-0 w-full h-full object-cover"
           src="https://img.freepik.com/psd-gratis/concepto-paginas-aterrizaje-veterinarias_23-2148451973.jpg?w=1380&t=st=1701782271~exp=1701782871~hmac=074901bc5334a42e1827c9bb5d5fb070cc283de064bff3c2446254fd17d8c7de"
