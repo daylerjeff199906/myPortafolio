@@ -4,9 +4,9 @@ import { usePagination } from "../../../../hooks/client/usePagination";
 import { UseLogicData } from "../../../../provider/client/dataProvider";
 
 const optionsFilters = [
-  { id: 1, name: "All" },
-  { id: 2, name: "Development" },
-  { id: 3, name: "Desing" },
+  { id: 1, name: "All", value: "" },
+  { id: 2, name: "Development", value: "development" },
+  { id: 3, name: "Desing", value: "desing" },
 ];
 
 export const ProyectsSection = () => {
@@ -25,7 +25,7 @@ export const ProyectsSection = () => {
                 <Button
                   key={item.id}
                   onClick={() =>
-                    updateUrl({ name: "filter", value: item.name })
+                    updateUrl({ name: "categories", value: item.value })
                   }
                   color="success"
                   variant="bordered"
@@ -37,13 +37,6 @@ export const ProyectsSection = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {/* <CardProject />
-          <CardProject />
-          <CardProject />
-          <CardProject />
-          <CardProject />
-          <CardProject /> */}
-
           {dataProjects?.map((item, index) => (
             <CardProject
               key={index}
