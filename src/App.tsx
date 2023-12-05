@@ -1,4 +1,3 @@
-import "./App.css";
 import { ClientRoutes } from "./routes/routes";
 // import { firebaseApp } from "./firebase/firebase";
 
