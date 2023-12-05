@@ -18,8 +18,17 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Other */
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+    }
   },
-  "include": ["src"],
+  // "include": ["src"],
+  // "exclude": ["node_modules", "build", "dist", "coverage", "scripts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
