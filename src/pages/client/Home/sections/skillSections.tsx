@@ -7,7 +7,7 @@ export const SkillSection = () => {
   return (
     <>
       <div className="container py-6 mx-auto">
-        <div>
+        <div className="pb-6">
           <h1 className="text-2xl font-bold">Skills </h1>
         </div>
         <div className="flex flex-wrap justify-center gap-4">
