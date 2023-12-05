@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { db } from "../../firebase/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, DocumentData } from "firebase/firestore";
 
 export function useData() {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [projects, setProjects] = useState<DocumentData[] | null>(null);
   const [profile, setProfile] = useState({});
 
   const getCollection = async (name: string) => {
     const querySnapshot = await getDocs(collection(db, name));
-    const data = querySnapshot.docs.map((doc) => doc.data());
+    const data = querySnapshot.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
     return data;
   };
 
@@ -28,13 +31,12 @@ export function useData() {
     setLoading(true);
     try {
       const projects = await getCollection("projects");
-      console.log(projects);
-      //   setData(projects);
+      setProjects(projects);
       setLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-  return { loading, data, profile, getProfile, getProjects };
+  return { loading, projects, profile, getProfile, getProjects };
 }

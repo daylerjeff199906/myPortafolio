@@ -1,6 +1,6 @@
 export interface IProfile {
   id: number;
   name: string;
-  email: string;
-  avatar: string;
+  description: string;
+  url_image: string;
 }

@@ -1,8 +1,14 @@
 export interface IProject {
-  id: number;
+  //   id: number;
   name: string;
   description: string;
-  image: string;
-  url: string;
-  github: string;
+  url_image: string;
+  url_link: string;
+  category: string;
+  social_medias: [
+    {
+      name: string;
+      url_link: string;
+    }
+  ];
 }
