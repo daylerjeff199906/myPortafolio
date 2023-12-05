@@ -3,7 +3,7 @@ export const SkillSection = () => {
     <>
       <div className="container py-6 max-w-5xl">
         <div>
-          <h1 className="text-3xl font-bold">SkillS </h1>
+          <h1 className="text-3xl font-bold">Skills </h1>
         </div>
       </div>
     </>

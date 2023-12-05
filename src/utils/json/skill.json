@@ -1,16 +1,15 @@
 {
-  "skills": [
-    {
-      "name": "HTML",
-      "type": "Development"
+  "skills": {
+    "development": {
+      "languages": ["HTML", "CSS", "JavaScript", "Python", "PHP"],
+      "frameworks": ["React", "Laravel", "Vue"]
     },
-    {
-      "name": "CSS",
-      "type": "Development"
+    "design": {
+      "tools": ["Figma", "Photoshop"]
     },
-    {
-      "name": "JavaScript",
-      "type": "Development"
+    "additional": {
+      "languages": ["Spanish", "English"],
+      "otherSkills": ["Team Collaboration", "Problem Solving", "Communication"]
     }
-  ]
+  }
 }
