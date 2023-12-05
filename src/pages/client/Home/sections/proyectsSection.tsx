@@ -14,7 +14,7 @@ export const ProyectsSection = () => {
   const { dataProjects, dataDefault } = UseLogicData();
   return (
     <>
-      <div className="container py-6 max-w-7xl pb-12">
+      <div className="container py-6 pb-12">
         <div className="block sm:flex item-center justify-between pb-6">
           <h1 className="text-2xl font-bold">Recent projects </h1>
           <div className="flex items-center gap-3">
@@ -27,6 +27,9 @@ export const ProyectsSection = () => {
                     updateUrl({ name: "categories", value: item.value })
                   }
                   color="success"
+                  className={
+                    dataDefault.categories === item.value ? "text-white" : ""
+                  }
                   variant={
                     dataDefault.categories === item.value ? "solid" : "bordered"
                   }

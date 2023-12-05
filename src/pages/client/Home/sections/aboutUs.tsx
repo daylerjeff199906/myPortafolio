@@ -12,7 +12,7 @@ import { UseLogicData } from "../../../../provider/client/dataProvider";
 
 export const AboutUsSection = () => {
   const { dataProfile } = UseLogicData();
-
+  console.log(dataProfile);
   const socialMedia = [
     {
       name: "linkedin",
@@ -36,9 +36,32 @@ export const AboutUsSection = () => {
     },
   ];
 
+  const datePeson = [
+    {
+      name: "Name",
+      value: dataProfile?.name + " " + dataProfile?.last_name,
+    },
+    {
+      name: "Email",
+      value: dataProfile?.correo,
+    },
+    {
+      name: "Date of birth",
+      value: dataProfile?.date_birth,
+    },
+    {
+      name: "Phone",
+      value: dataProfile?.phone,
+    },
+    {
+      name: "Address",
+      value: dataProfile?.address,
+    },
+  ];
+
   return (
     <>
-      <div className="container py-6 max-w-7xl">
+      <div className="container py-6 ">
         <div className="block sm:flex items-center justify-center gap-6">
           <div className="flex flex-col items-center text-center">
             <Image
@@ -59,17 +82,22 @@ export const AboutUsSection = () => {
                 </Link>
               ))}
             </div>
-          </div>
-          <div className="sm:max-w-lg space-y-3">
-            <h3 className="text-4xl font-bold">!Hola soy Jeff¡</h3>
-            <h3 className="text-lg">{dataProfile?.description}</h3>
-            <div className="flex gap-4">
+            <div className="pt-4">
               <Button color="success" className="text-white font-bold">
                 Descargar CV
               </Button>
-              <Button color="success" variant="bordered" className="font-bold">
-                Ver Proyectos
-              </Button>
+            </div>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-4xl font-bold">About me </h3>
+            <h3 className="">{dataProfile?.biography}</h3>
+            <div className="block sm:grid grid-cols-2">
+              {datePeson.map((item, index) => (
+                <div key={index} className="flex gap-4">
+                  <h3 className="text-slate-800 font-bold">{item.name} :</h3>
+                  <h3 className="text-slate-800 ">{item.value}</h3>
+                </div>
+              ))}
             </div>
           </div>
         </div>
