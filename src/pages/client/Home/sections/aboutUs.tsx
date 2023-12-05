@@ -17,18 +17,23 @@ export const AboutUsSection = () => {
     {
       name: "linkedin",
       icon: <IconBrandLinkedin size={30} />,
+      url_link:
+        "https://linkedin.com/in/josé-jefferson-santos-panaifo-3668a7246",
     },
     {
       name: "github",
       icon: <IconBrandGithub size={30} />,
+      url_link: "https://gist.github.com/daylerjeff199906",
     },
     {
       name: "twitter",
       icon: <IconBrandTwitter size={30} />,
+      url_link: "https://twitter.com/pananifo	",
     },
     {
       name: "instagram",
       icon: <IconBrandInstagram size={30} />,
+      url_link: "https://www.instagram.com/daylerjeff/",
     },
   ];
 
@@ -71,7 +76,8 @@ export const AboutUsSection = () => {
               {socialMedia?.map((item, index) => (
                 <Link
                   key={index}
-                  to={dataProfile?.social_medias[index].url_link}
+                  // to={dataProfile?.social_medias[index]?.url_link}
+                  to={item.url_link}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-gray-600"
