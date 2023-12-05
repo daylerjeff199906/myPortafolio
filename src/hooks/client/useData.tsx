@@ -5,6 +5,7 @@ import { collection, getDocs, DocumentData } from "firebase/firestore";
 export function useData() {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState<DocumentData[] | null>(null);
+  const [skills, setSkills] = useState<DocumentData[] | null>(null);
   const [profile, setProfile] = useState({});
 
   const getCollection = async (name: string) => {
@@ -38,5 +39,24 @@ export function useData() {
     }
   };
 
-  return { loading, projects, profile, getProfile, getProjects };
+  const getSkills = async () => {
+    setLoading(true);
+    try {
+      const skills = await getCollection("skills");
+      setSkills(skills);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return {
+    loading,
+    projects,
+    profile,
+    skills,
+    getProfile,
+    getProjects,
+    getSkills,
+  };
 }
