@@ -1,6 +1,7 @@
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { CardProject } from "../../../../components";
 import { usePagination } from "../../../../hooks/client/usePagination";
+import { UseLogicData } from "../../../../provider/client/dataProvider";
 
 const optionsFilters = [
   { id: 1, name: "All" },
@@ -10,6 +11,8 @@ const optionsFilters = [
 
 export const ProyectsSection = () => {
   const { updateUrl } = usePagination();
+  const { dataProjects } = UseLogicData();
+  console.log(dataProjects);
   return (
     <>
       <div className="container py-6 max-w-7xl pb-12">
@@ -34,15 +37,25 @@ export const ProyectsSection = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <CardProject />
-          <CardProject />
-          <CardProject />
-          <CardProject />
-          <CardProject />
-          <CardProject />
           {/* <CardProject />
           <CardProject />
+          <CardProject />
+          <CardProject />
+          <CardProject />
           <CardProject /> */}
+
+          {dataProjects?.map((item, index) => (
+            <CardProject
+              key={index}
+              project={{
+                id: item.id,
+                title: item.name,
+                tag: item.category,
+                image: item.url_image,
+                url: item.url_link,
+              }}
+            />
+          ))}
         </div>
       </div>
     </>

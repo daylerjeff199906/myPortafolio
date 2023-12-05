@@ -1,5 +1,4 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { DocumentData } from "firebase/firestore";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useData } from "../../hooks/client/useData";
 import { IProject } from "../../types/IProjects";
@@ -9,22 +8,11 @@ export const DataContext = createContext<{
   loading: boolean;
   dataProjects: IProject[];
   dataProfile: IProfile;
-}>({ loading: true, dataProjects: [], dataProfile: {} as IProfile });
-
-const convertDataProjects = (projects: DocumentData[]) => {
-  const dataProjects = projects.map((project) => {
-    const { id, name, description, url_image, url_link, category } = project;
-    return {
-      id,
-      name,
-      description,
-      url_image,
-      url_link,
-      category,
-    };
-  });
-  return dataProjects;
-};
+}>({
+  loading: true,
+  dataProjects: [] as IProject[],
+  dataProfile: {} as IProfile,
+});
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const { loading, projects, profile, getProfile, getProjects } = useData();
@@ -39,7 +27,7 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   console.log("dataProjects", projects);
 
   useEffect(() => {
-    // setDataProjects(convertDataProjects(projects));
+    setDataProjects(projects as IProject[]);
   }, [projects]);
 
   useEffect(() => {
