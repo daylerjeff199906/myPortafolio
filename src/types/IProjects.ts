@@ -12,5 +12,5 @@ export interface ISkill {
   name: string;
   description: string;
   tools: [string];
-  language: [string];
+  languages: [string];
 }
