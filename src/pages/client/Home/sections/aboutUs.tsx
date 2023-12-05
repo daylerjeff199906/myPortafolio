@@ -3,7 +3,7 @@ export const AboutUsSection = () => {
     <>
       <div>
         <div>
-          <h2 className="text-4xl font-bold">¿Quiénes somos?</h2>
+          <h2 className="text-sm">¿Quiénes somos?</h2>
           <p>
             Somos una empresa dedicada a la venta de productos de calidad, con
             precios accesibles y con un servicio de entrega a domicilio.
