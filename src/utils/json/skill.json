@@ -1,0 +1,16 @@
+{
+  "skills": [
+    {
+      "name": "HTML",
+      "type": "Development"
+    },
+    {
+      "name": "CSS",
+      "type": "Development"
+    },
+    {
+      "name": "JavaScript",
+      "type": "Development"
+    }
+  ]
+}

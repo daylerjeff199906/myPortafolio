@@ -9,7 +9,7 @@ import {
 export const AboutUsSection = () => {
   return (
     <>
-      <div className="container">
+      <div className="container py-6 max-w-5xl">
         <div className="block sm:flex items-center justify-center gap-4">
           <div className="flex flex-col items-center text-center">
             <Image
