@@ -5,11 +5,11 @@ import { useData } from "../../hooks/client/useData";
 import { IProject } from "../../types/IProjects";
 import { IProfile } from "@/types/IProfile";
 
-export const DataContext = createContext({
-  loading: true,
-  dataProjects: [] as IProject[],
-  dataProfile: {} as IProfile,
-});
+export const DataContext = createContext<{
+  loading: boolean;
+  dataProjects: IProject[];
+  dataProfile: IProfile;
+}>({ loading: true, dataProjects: [], dataProfile: {} as IProfile });
 
 const convertDataProjects = (projects: DocumentData[]) => {
   const dataProjects = projects.map((project) => {

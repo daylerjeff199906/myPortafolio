@@ -17,22 +17,22 @@ export const AboutUsSection = () => {
     {
       name: "linkedin",
       icon: <IconBrandLinkedin size={30} />,
-      url: dataProfile?.social_medias?.url_link[0],
+      // url: dataProfile?.social_medias?.url_link[0],
     },
     {
       name: "github",
       icon: <IconBrandGithub size={30} />,
-      url: dataProfile?.social_medias?.url_link[1],
+      // url: dataProfile?.social_medias?.url_link[1],
     },
     {
       name: "twitter",
       icon: <IconBrandTwitter size={30} />,
-      url: dataProfile?.social_medias?.url_link[2],
+      // url: dataProfile?.social_medias?.url_link[2],
     },
     {
       name: "instagram",
       icon: <IconBrandInstagram size={30} />,
-      url: dataProfile?.social_medias?.url_link[3],
+      // url: dataProfile?.social_medias?.url_link[3],
     },
   ];
 
@@ -50,7 +50,7 @@ export const AboutUsSection = () => {
               {socialMedia.map((item, index) => (
                 <Link
                   key={index}
-                  to={item.url}
+                  to={dataProfile?.social_medias?.url_link[index]}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-gray-600"
