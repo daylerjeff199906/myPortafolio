@@ -1,7 +1,9 @@
+import { AboutUsSection } from "./sections/aboutUs";
+
 export const IndexHome = () => {
   return (
     <>
-      <h1>Home</h1>
+      <AboutUsSection />
     </>
   );
 };
