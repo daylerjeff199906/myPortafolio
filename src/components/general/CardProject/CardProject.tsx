@@ -22,7 +22,9 @@ export function CardProject({ project }: { project: projectInfo }) {
     <>
       <Card isFooterBlurred className="w-full h-[260px] " isBlurred>
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <Chip color="secondary">{project?.tag || "Desing"}</Chip>
+          <Chip color="secondary" className="capitalize">
+            {project?.tag || "Desing"}
+          </Chip>
         </CardHeader>
         <Image
           removeWrapper
@@ -33,7 +35,7 @@ export function CardProject({ project }: { project: projectInfo }) {
         />
         <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           <div className="flex flex-grow gap-2 items-center">
-            <div>
+            <div className="text-gray-300">
               <IconBrandGithubFilled size={24} />
             </div>
             <div className="flex flex-col">

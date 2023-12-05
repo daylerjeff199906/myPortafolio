@@ -3,7 +3,6 @@ import { UseLogicData } from "../../../../provider/client/dataProvider";
 
 export const SkillSection = () => {
   const { dataSkills } = UseLogicData();
-  console.log(dataSkills);
   return (
     <>
       <div className="container py-6 mx-auto">
