@@ -1,7 +1,7 @@
 export const SkillSection = () => {
   return (
     <>
-      <div className="container py-6 max-w-5xl">
+      <div className="container py-6 max-w-7xl">
         <div>
           <h1 className="text-3xl font-bold">Skills </h1>
         </div>
