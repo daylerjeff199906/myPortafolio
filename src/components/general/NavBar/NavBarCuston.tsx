@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -5,15 +6,22 @@ import {
   NavbarItem,
   Link,
   Button,
+  Switch,
 } from "@nextui-org/react";
+import { IconMoonFilled, IconBrightnessHalf } from "@tabler/icons-react";
 
 export function NavBarCuston() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const handleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <Navbar>
       <NavbarBrand>
-        {/* <AcmeLogo /> */}
-        <h1>ACME</h1>
-        <p className="font-bold text-inherit">ACME</p>
+        <h1>MY</h1>
+        <p className="font-bold text-inherit">PORTAFOLIO</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
@@ -41,6 +49,12 @@ export function NavBarCuston() {
             Sign Up
           </Button>
         </NavbarItem>
+        <Switch
+          thumbIcon={darkMode ? <IconMoonFilled /> : <IconBrightnessHalf />}
+          onChange={handleDarkMode}
+        >
+          Dark Mode
+        </Switch>
       </NavbarContent>
     </Navbar>
   );

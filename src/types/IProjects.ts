@@ -6,3 +6,5 @@ export interface IProject {
   url_link: string;
   category: string;
 }
+
+export interface ISkill {}

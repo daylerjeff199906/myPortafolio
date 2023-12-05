@@ -64,11 +64,13 @@ export const AboutUsSection = () => {
       <div className="container py-6 ">
         <div className="block sm:flex items-center justify-center gap-6">
           <div className="flex flex-col items-center text-center">
-            <Image
-              alt="photo.jpg"
-              src={dataProfile?.url_image}
-              className="w-40 h-40 rounded-full"
-            />
+            <div className="relative w-48 h-48 rounded-full overflow-hidden">
+              <Image
+                alt="photo.jpg"
+                src={dataProfile?.url_image}
+                className="w-48 h-48 rounded-full"
+              />
+            </div>
             <div className="flex gap-2 pt-4 items-center text-center">
               {socialMedia.map((item, index) => (
                 <Link
