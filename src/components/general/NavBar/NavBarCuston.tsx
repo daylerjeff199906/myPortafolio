@@ -28,7 +28,7 @@ export function NavBarCuston() {
   }, [darkMode]);
 
   return (
-    <Navbar maxWidth="2xl">
+    <Navbar maxWidth="2xl" className="fixed">
       <NavbarBrand>
         <h1>MY</h1>
         <p className="font-bold text-inherit">PORTAFOLIO</p>
