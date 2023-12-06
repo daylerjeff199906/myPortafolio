@@ -37,8 +37,8 @@ export const LandingSection = () => {
   };
 
   return (
-    <div className="container h-screen " id="#">
-      <div className="block h-full sm:flex items-center pt-6 md:pt-4">
+    <div className="container h-screen" id="#">
+      <div className="block h-full sm:flex items-center pt-4 md:pt-28">
         <div className="p-0 sm:p-10 dark:text-white flex justify-center">
           <IconDeviceLaptop size={280} stroke={0.5} />
         </div>

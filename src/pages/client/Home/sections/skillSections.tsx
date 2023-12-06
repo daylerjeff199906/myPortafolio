@@ -5,7 +5,7 @@ export const SkillSection = () => {
   const { dataSkills } = UseLogicData();
   return (
     <>
-      <div className="container py-12 mx-auto" id="services">
+      <div className="container py-4 md:py-28 h-full mx-auto" id="services">
         <div className="pb-6">
           <h1 className="text-2xl font-bold dark:text-white">Services</h1>
         </div>
