@@ -28,10 +28,12 @@ export function NavBarCuston() {
   }, [darkMode]);
 
   return (
-    <Navbar maxWidth="2xl" className="fixed">
+    <Navbar maxWidth="2xl" className="fixed" shouldHideOnScroll>
       <NavbarBrand>
-        <h1>MY</h1>
-        <p className="font-bold text-inherit">PORTAFOLIO</p>
+        <h1 className="font-bold dark:text-white">
+          Jeff
+          <span className="text-primary-500"> Santos</span>
+        </h1>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
