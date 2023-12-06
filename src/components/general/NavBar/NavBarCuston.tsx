@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -10,6 +10,13 @@ import {
 } from "@nextui-org/react";
 import { IconMoonFilled, IconBrightnessHalf } from "@tabler/icons-react";
 
+const navbarOptions = [
+  { label: "Home", value: "#" },
+  { label: "About Me", value: "about-me" },
+  { label: "Services", value: "services" },
+  { label: "Projects", value: "projects" },
+];
+
 export function NavBarCuston() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -17,32 +24,50 @@ export function NavBarCuston() {
     setDarkMode(!darkMode);
   };
 
+  useEffect(() => {
+    if (darkMode) {
+      localStorage.setItem("theme", "dark");
+      document.querySelector("html")?.classList.add("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      document.querySelector("html")?.classList.remove("dark");
+    }
+  }, [darkMode]);
+
+  const handleScrollToProjects = (value: string) => {
+    const projectsSection = document.getElementById(value);
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <Navbar>
+    <Navbar maxWidth="2xl" className="fixed" shouldHideOnScroll>
       <NavbarBrand>
-        <h1>MY</h1>
-        <p className="font-bold text-inherit">PORTAFOLIO</p>
+        <h1 className="font-bold dark:text-white">
+          Jeff
+          <span className="text-primary-500"> Santos</span>
+        </h1>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Projects
-          </Link>
-        </NavbarItem>
+        {navbarOptions.map((option) => (
+          <NavbarItem key={option.value}>
+            <Button
+              onClick={() => handleScrollToProjects(option.value)}
+              variant="light"
+            >
+              {option.label}
+            </Button>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>
           <Button
             as={Link}
-            color="primary"
             href="#"
             variant="bordered"
-            className="text-primary-700"
+            className="text-white bg-primary-500 hover:bg-primary-600 border-primary-600"
           >
             Contact Me
           </Button>

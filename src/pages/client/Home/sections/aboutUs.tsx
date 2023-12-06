@@ -12,7 +12,6 @@ import { UseLogicData } from "../../../../provider/client/dataProvider";
 
 export const AboutUsSection = () => {
   const { dataProfile } = UseLogicData();
-  console.log(dataProfile);
   const socialMedia = [
     {
       name: "linkedin",
@@ -61,15 +60,15 @@ export const AboutUsSection = () => {
   ];
 
   return (
-    <>
-      <div className="container py-6 ">
+    <div id="about-me">
+      <div className="container py-12 dark:text-white">
         <div className="block sm:flex items-center justify-center gap-6">
           <div className="flex flex-col items-center text-center">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden">
+            <div className="relative w-56 h-56 rounded-full overflow-hidden">
               <Image
                 alt="photo.jpg"
                 src={dataProfile?.url_image}
-                className="w-48 h-48 rounded-full"
+                className="w-56 h-56 rounded-full"
               />
             </div>
             <div className="flex gap-2 pt-4 items-center text-center">
@@ -93,19 +92,23 @@ export const AboutUsSection = () => {
             </div>
           </div>
           <div className="space-y-3">
-            <h3 className="text-4xl font-bold">About me </h3>
-            <h3 className="">{dataProfile?.biography}</h3>
+            <h3 className="text-4xl font-bold dark:text-white">About me </h3>
+            <h3 className="dark:text-white">{dataProfile?.biography}</h3>
             <div className="block sm:grid grid-cols-2">
               {datePeson.map((item, index) => (
                 <div key={index} className="flex gap-4">
-                  <h3 className="text-slate-800 font-bold">{item.name} :</h3>
-                  <h3 className="text-slate-800 ">{item.value}</h3>
+                  <h3 className="text-slate-800 font-bold dark:text-white">
+                    {item.name} :
+                  </h3>
+                  <h3 className="text-slate-800 dark:text-white">
+                    {item.value}
+                  </h3>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

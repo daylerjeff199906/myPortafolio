@@ -13,10 +13,12 @@ export const ProyectsSection = () => {
   const { updateUrl } = usePagination();
   const { dataProjects, dataDefault } = UseLogicData();
   return (
-    <>
-      <div className="container py-6 pb-12">
+    <div id="projects">
+      <div className="container py-12 pb-12">
         <div className="block sm:flex item-center justify-between pb-6">
-          <h1 className="text-2xl font-bold">Recent projects </h1>
+          <h1 className="text-2xl font-bold dark:text-white">
+            Recent projects
+          </h1>
           <div className="flex items-center gap-3">
             <h1 className="text-slate-800 font-medium">Filter by:</h1>
             <ButtonGroup size="sm">
@@ -40,7 +42,7 @@ export const ProyectsSection = () => {
             </ButtonGroup>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-4">
           {dataProjects?.map((item, index) => (
             <CardProject
               key={index}
@@ -55,6 +57,6 @@ export const ProyectsSection = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
