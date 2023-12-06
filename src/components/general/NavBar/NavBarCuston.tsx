@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -16,6 +16,16 @@ export function NavBarCuston() {
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+
+  useEffect(() => {
+    if (darkMode) {
+      localStorage.setItem("theme", "dark");
+      document.querySelector("html")?.classList.add("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      document.querySelector("html")?.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <Navbar maxWidth="2xl">
