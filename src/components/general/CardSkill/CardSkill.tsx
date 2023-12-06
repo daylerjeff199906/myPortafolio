@@ -10,7 +10,7 @@ interface Props {
 
 export function CardSkill({ title, description, tools, other }: Props) {
   return (
-    <Card className="max-w-sm min-w-[300px] border-1 p-3 sm:p-4" shadow="none">
+    <Card className=" border-1 p-3 sm:p-4" shadow="none">
       <CardBody>
         <div className="text-gray-500 mb-3">
           <IconDialpad size={34} className="border-2 rounded-lg p-1" />

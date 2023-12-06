@@ -13,7 +13,7 @@ export const ProyectsSection = () => {
   const { updateUrl } = usePagination();
   const { dataProjects, dataDefault } = UseLogicData();
   return (
-    <>
+    <div id="projects">
       <div className="container py-6 pb-12">
         <div className="block sm:flex item-center justify-between pb-6">
           <h1 className="text-2xl font-bold dark:text-white">
@@ -57,6 +57,6 @@ export const ProyectsSection = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };

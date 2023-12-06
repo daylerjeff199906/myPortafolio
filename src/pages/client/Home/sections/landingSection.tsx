@@ -1,12 +1,34 @@
+import { Button } from "@nextui-org/react";
+import { IconDeviceLaptop } from "@tabler/icons-react";
+
 export const LandingSection = () => {
+  const handleScrollToProjects = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
       <div className="container h-screen">
-        <div></div>
-        <div>
-          <h3 className="text-lg sm:text-xl lg:text-7xl font-bold dark:text-white">
-            Hi, I'm <span className="text-primary-500">Jefferson Santos</span>
-          </h3>
+        <div className="block h-full sm:flex items-center pt-12 md:pt-4">
+          <div className="p-0 sm:p-10 dark:text-white">
+            <IconDeviceLaptop size={280} stroke={0.5} />
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-5xl  lg:text-7xl font-bold dark:text-white">
+              Hi, I'm <span className="text-primary-500">Jefferson Santos</span>
+            </h3>
+            <h3 className="text-lg lg:text-4xl  dark:text-white">
+              I'm a Developer and Designer
+            </h3>
+            <Button
+              className="text-white font-bold"
+              onClick={handleScrollToProjects}
+            >
+              View my works
+            </Button>
+          </div>
         </div>
       </div>
     </>
