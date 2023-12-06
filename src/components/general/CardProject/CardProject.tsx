@@ -20,7 +20,7 @@ interface projectInfo {
 export function CardProject({ project }: { project: projectInfo }) {
   return (
     <>
-      <Card isFooterBlurred className="w-full h-[260px] " isBlurred>
+      <Card isFooterBlurred className="w-full h-[320px] " isBlurred>
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
           <Chip color="secondary" className="capitalize">
             {project?.tag || "Desing"}
