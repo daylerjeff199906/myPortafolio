@@ -7,9 +7,9 @@ export const SkillSection = () => {
     <>
       <div className="container py-6 mx-auto">
         <div className="pb-6">
-          <h1 className="text-2xl font-bold dark:text-white">Skills </h1>
+          <h1 className="text-2xl font-bold dark:text-white">Services</h1>
         </div>
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex justify-center gap-4">
           {dataSkills?.length > 0 &&
             dataSkills?.map((item, index) => (
               <CardSkill
