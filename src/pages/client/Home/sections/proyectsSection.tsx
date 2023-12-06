@@ -16,7 +16,9 @@ export const ProyectsSection = () => {
     <>
       <div className="container py-6 pb-12">
         <div className="block sm:flex item-center justify-between pb-6">
-          <h1 className="text-2xl font-bold">Recent projects </h1>
+          <h1 className="text-2xl font-bold dark:text-white">
+            Recent projects
+          </h1>
           <div className="flex items-center gap-3">
             <h1 className="text-slate-800 font-medium">Filter by:</h1>
             <ButtonGroup size="sm">

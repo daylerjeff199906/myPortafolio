@@ -42,7 +42,7 @@ export function NavBarCuston() {
             color="primary"
             href="#"
             variant="bordered"
-            className="text-primary-700"
+            className="text-primary-800"
           >
             Contact Me
           </Button>
