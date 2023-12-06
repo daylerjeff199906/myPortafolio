@@ -18,7 +18,7 @@ export function NavBarCuston() {
   };
 
   return (
-    <Navbar>
+    <Navbar maxWidth="2xl">
       <NavbarBrand>
         <h1>MY</h1>
         <p className="font-bold text-inherit">PORTAFOLIO</p>

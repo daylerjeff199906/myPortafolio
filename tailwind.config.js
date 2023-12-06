@@ -21,6 +21,19 @@ export default {
       },
     },
     extend: {
+      colors: {
+        primary: {
+          100: "#f0f5ff",
+          200: "#f0f5ff",
+          300: "#f0f5ff",
+          400: "#00ff7f",
+          500: "#4bffa5",
+          600: "#00ff7f",
+          700: "#00ff7f",
+          800: "#00ff7f",
+          900: "#00ff7f",
+        },
+      },
       keyframes: {
         love: {
           "100%": { transform: "scale(1.2)" },
