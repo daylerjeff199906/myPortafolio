@@ -10,6 +10,13 @@ import {
 } from "@nextui-org/react";
 import { IconMoonFilled, IconBrightnessHalf } from "@tabler/icons-react";
 
+const navbarOptions = [
+  { label: "Home", value: "#" },
+  { label: "About Me", value: "about-me" },
+  { label: "Services", value: "services" },
+  { label: "Projects", value: "projects" },
+];
+
 export function NavBarCuston() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -27,6 +34,13 @@ export function NavBarCuston() {
     }
   }, [darkMode]);
 
+  const handleScrollToProjects = (value: string) => {
+    const projectsSection = document.getElementById(value);
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Navbar maxWidth="2xl" className="fixed" shouldHideOnScroll>
       <NavbarBrand>
@@ -36,16 +50,16 @@ export function NavBarCuston() {
         </h1>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Projects
-          </Link>
-        </NavbarItem>
+        {navbarOptions.map((option) => (
+          <NavbarItem key={option.value}>
+            <Button
+              onClick={() => handleScrollToProjects(option.value)}
+              variant="light"
+            >
+              {option.label}
+            </Button>
+          </NavbarItem>
+        ))}
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem>

@@ -3,8 +3,8 @@ import { Button } from "@nextui-org/react";
 import { IconDeviceLaptop } from "@tabler/icons-react";
 
 export const LandingSection = () => {
-//   const [typedText, setTypedText] = useState("");
-//   const targetText = "I'm a Developer and Designer";
+  //   const [typedText, setTypedText] = useState("");
+  //   const targetText = "I'm a Developer and Designer";
 
   const handleScrollToProjects = () => {
     const projectsSection = document.getElementById("projects");
@@ -15,7 +15,7 @@ export const LandingSection = () => {
 
   return (
     <>
-      <div className="container h-screen ">
+      <div className="container h-screen " id="#">
         <div className="block h-full sm:flex items-center pt-12 md:pt-4">
           <div className="p-0 sm:p-10 dark:text-white">
             <IconDeviceLaptop size={280} stroke={0.5} />

@@ -60,7 +60,7 @@ export const AboutUsSection = () => {
   ];
 
   return (
-    <>
+    <div id="about-me">
       <div className="container py-6 dark:text-white">
         <div className="block sm:flex items-center justify-center gap-6">
           <div className="flex flex-col items-center text-center">
@@ -109,6 +109,6 @@ export const AboutUsSection = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
