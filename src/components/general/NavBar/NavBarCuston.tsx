@@ -65,10 +65,9 @@ export function NavBarCuston() {
         <NavbarItem>
           <Button
             as={Link}
-            color="primary"
             href="#"
             variant="bordered"
-            className="text-primary-800"
+            className="text-white bg-primary-500 hover:bg-primary-600 border-primary-600"
           >
             Contact Me
           </Button>

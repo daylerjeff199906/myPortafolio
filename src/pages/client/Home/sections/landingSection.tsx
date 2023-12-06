@@ -69,7 +69,6 @@ export const LandingSection = () => {
                 ))}
               </div>
             }
-            div
           </div>
         </div>
       </div>
