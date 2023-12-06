@@ -16,11 +16,13 @@ export const ProyectsSection = () => {
     <div id="projects">
       <div className="container py-12 pb-12">
         <div className="block sm:flex item-center justify-between pb-6">
-          <h1 className="text-2xl font-bold dark:text-white">
+          <h1 className="text-2xl font-bold dark:text-white pb-4 sm:pb-0">
             Recent projects
           </h1>
           <div className="flex items-center gap-3">
-            <h1 className="text-slate-800 font-medium">Filter by:</h1>
+            <h1 className="text-slate-800 font-medium dark:text-white">
+              Filter by:
+            </h1>
             <ButtonGroup size="sm">
               {optionsFilters.map((item) => (
                 <Button
