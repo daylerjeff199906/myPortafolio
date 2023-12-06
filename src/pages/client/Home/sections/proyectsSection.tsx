@@ -14,7 +14,7 @@ export const ProyectsSection = () => {
   const { dataProjects, dataDefault } = UseLogicData();
   return (
     <div id="projects">
-      <div className="container py-12 pb-12">
+      <div className="container py-4 md:py-24">
         <div className="block sm:flex item-center justify-between pb-6">
           <h1 className="text-2xl font-bold dark:text-white pb-4 sm:pb-0">
             Recent projects

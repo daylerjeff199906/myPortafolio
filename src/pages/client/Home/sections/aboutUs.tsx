@@ -63,8 +63,8 @@ export const AboutUsSection = () => {
   return (
     <div id="about-me">
       <div className="container dark:text-white">
-        <div className="block sm:grid grid-cols-1 sm:grid-cols-2 items-center justify-center gap-6 ">
-          <div className="relative w-full h-full  overflow-hidden py-8">
+        <div className="block sm:grid grid-cols-1 sm:grid-cols-2 items-center justify-center gap-6 pb-10">
+          <div className="relative w-full h-full  overflow-hidden py-0 sm:py-8">
             <div className="absolute inset-0 z-10">
               <BgSvg />
             </div>
