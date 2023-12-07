@@ -19,6 +19,7 @@ const navbarOptions = [
 
 export function NavBarCuston() {
   const [darkMode, setDarkMode] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("#");
 
   const handleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -38,13 +39,14 @@ export function NavBarCuston() {
     const projectsSection = document.getElementById(value);
     if (projectsSection) {
       projectsSection.scrollIntoView({ behavior: "smooth" });
+      setSelectedValue(value);
     }
   };
 
   return (
-    <Navbar maxWidth="2xl" className="fixed" shouldHideOnScroll>
+    <Navbar maxWidth="2xl" className="fixed shadow-md" shouldHideOnScroll>
       <NavbarBrand>
-        <h1 className="font-bold dark:text-white">
+        <h1 className="text-xl font-bold dark:text-white">
           Jeff
           <span className="text-primary-500"> Santos</span>
         </h1>
@@ -55,6 +57,11 @@ export function NavBarCuston() {
             <Button
               onClick={() => handleScrollToProjects(option.value)}
               variant="light"
+              className={`font-semibold ${
+                option.value === selectedValue
+                  ? "text-primary-500"
+                  : "text-gray-500"
+              }`}
             >
               {option.label}
             </Button>
